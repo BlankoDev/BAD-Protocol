@@ -173,7 +173,7 @@ class Item:
     def from_dict(cls, _dict: dict, parent): # for some reason of early dev choices this class can not use JsonLoadableData
         content = _dict["content"] if "content" in _dict else ""
         for data_key in _dict:
-            if data_key in ["title", "level", "content"]: continue
+            if data_key in ["title", "level", "content", "theme"]: continue
             content = content + "\n\r" + _dict[data_key]
         
         if content.startswith("\n\r"): content.removeprefix("\n\r")
